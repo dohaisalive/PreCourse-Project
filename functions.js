@@ -11,14 +11,12 @@
  */
 function sumOdds(numbers) {
   let addSum = 0;
-  numbers.forEach(element => {
-    if (element%2===1) 
-      addSum = addSum + element;
-    });
+  numbers.forEach((element) => {
+    if (element % 2 === 1) addSum = addSum + element;
+  });
   return addSum;
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
-
 
 /**
  * characterCount(string, c):
@@ -34,8 +32,10 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  let stringToArray = string.split('');
-  let numOfC = stringToArray.filter(element=> element.toLowerCase()===c.toLowerCase());
+  let stringToArray = string.split("");
+  let numOfC = stringToArray.filter(
+    (element) => element.toLowerCase() === c.toLowerCase()
+  );
   return numOfC.length;
 }
 //console.log(characterCount("Character Count is clever", "c"));
@@ -58,12 +58,11 @@ function characterCount(string, c) {
  */
 function largestIncrement(numbers) {
   let difference = 0;
-  
-  for (let i = 0; i < numbers.length; i++){
-    let elementsDiff = Math.abs(numbers[i]-numbers[i-1])
-    if (elementsDiff>difference){
-      difference = elementsDiff; 
-      }
+  for (let i = 0; i < numbers.length; i++) {
+    let elementsDiff = Math.abs(numbers[i] - numbers[i - 1]);
+    if (elementsDiff > difference) {
+      difference = elementsDiff;
+    }
   }
   return difference;
 }
@@ -117,7 +116,7 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  return (string === string.toUpperCase())
+  return string === string.toUpperCase();
 }
 
 //console.log(isUpperCase("JCREW"));
@@ -133,8 +132,7 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  let found = numbers.filter(element=>element===x);
-  return found.length !== 0;
+  return numbers.includes(x);
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
