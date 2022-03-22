@@ -11,11 +11,12 @@
  */
 function sumOdds(numbers) {
   let oddNums = numbers.filter(element=>element%2===1);
-  console.log(oddNums);
+  //console.log(oddNums);
   let addSum = 0;
-  for (let i = 0; i<oddNums.length; i++){
-    addSum = addSum + oddNums[i];
-  }
+  oddNums.forEach(element => addSum = addSum + element);
+  // for (let i = 0; i<oddNums.length; i++){
+  //   addSum = addSum + oddNums[i];
+  // }
   return addSum;
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
@@ -62,9 +63,18 @@ function characterCount(string, c) {
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
 function largestIncrement(numbers) {
+  let difference = 0;
+  for (let i = 0; i < numbers.length; i++){
+    let elementsDiff = Math.abs(numbers[i]-numbers[i-1])
+    if (elementsDiff>difference){
+      difference = elementsDiff; 
+      }
+  }
+  return difference;
   // Your code here
+
 }
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+//console.log(largestIncrement([1, 3, 7, 9, 19]));
 
 /**
  * afterX(numbers, x):
