@@ -1,13 +1,4 @@
-/**
- * REFERENCES:
- * - String methods: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#
- *
- * If you'd like to run your function to test it yourself,
- * uncomment it from the bottom of this file, then run this
- * file with `node project.js`.
- *
- * Good luck!
- */
+//String methods: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#
 
 /**
  * sumOdds(numbers):
@@ -19,9 +10,16 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  // Your code here
+  let oddNums = numbers.filter(element=>element%2===1);
+  console.log(oddNums);
+  let addSum = 0;
+  for (let i = 0; i<oddNums.length; i++){
+    addSum = addSum + oddNums[i];
+  }
+  return addSum;
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+
 
 /**
  * characterCount(string, c):
@@ -37,9 +35,14 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  let stringtoarray = string.toUpperCase();
+  //console.log(stringtoarray);
+  stringtoarray = string.split('');
+  let numofc = stringtoarray.filter(element=> element==="C");
+  console.log(numofc);
+  return numofc.length;
 }
-// console.log(characterCount("Character Count is clever", "c"));
+characterCount("Character Count is clever", "c");
 
 /**
  * largestIncrement(numbers):
@@ -74,9 +77,11 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+  let index = numbers.indexOf(x);
+  let afterxarray = numbers.slice(index+1, numbers.length);
+  return afterxarray;
 }
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+//console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
 /**
  * abbreviate(firstName, lastName):
@@ -90,9 +95,12 @@ function afterX(numbers, x) {
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
-  // Your code here
+  let capital1 = firstName.toUpperCase();
+  let capital2 = lastName.toUpperCase();
+  let abbrev = capital1.charAt(0) + capital2.charAt(0);
+  return abbrev;
 }
-// console.log(abbreviate("miss", "Stephane"));
+//abbreviate("miss", "Stephane");
 
 /**
  * isUpperCase(string):
@@ -106,6 +114,8 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
+
+
 }
 
 // console.log(isUpperCase("JCREW"));
@@ -122,6 +132,11 @@ function isUpperCase(string) {
  */
 function elementInArray(numbers, x) {
   // Your code here
+  let found = numbers.filter(element=>element===x);
+  if (found.length !== 0){
+    return true;
+  }
+  return false;
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
