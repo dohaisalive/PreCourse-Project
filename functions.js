@@ -10,13 +10,11 @@
  * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
  */
 function sumOdds(numbers) {
-  let oddNums = numbers.filter(element=>element%2===1);
-  //console.log(oddNums);
   let addSum = 0;
-  oddNums.forEach(element => addSum = addSum + element);
-  // for (let i = 0; i<oddNums.length; i++){
-  //   addSum = addSum + oddNums[i];
-  // }
+  numbers.forEach(element => {
+    if (element%2===1) 
+      addSum = addSum + element;
+    });
   return addSum;
 }
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
@@ -36,13 +34,9 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  //let stringtoarray = string.toUpperCase();
-  //console.log(stringtoarray);
-  let stringtoarray = string.split('');
-  //console.log(stringtoarray);
-  let numofc = stringtoarray.filter(element=> element===c.toLowerCase() || element===c.toUpperCase() );
-  //console.log(numofc.length);
-  return numofc.length;
+  let stringToArray = string.split('');
+  let numOfC = stringToArray.filter(element=> element.toLowerCase()===c.toLowerCase());
+  return numOfC.length;
 }
 //console.log(characterCount("Character Count is clever", "c"));
 
@@ -64,6 +58,7 @@ function characterCount(string, c) {
  */
 function largestIncrement(numbers) {
   let difference = 0;
+  
   for (let i = 0; i < numbers.length; i++){
     let elementsDiff = Math.abs(numbers[i]-numbers[i-1])
     if (elementsDiff>difference){
@@ -71,8 +66,6 @@ function largestIncrement(numbers) {
       }
   }
   return difference;
-  // Your code here
-
 }
 //console.log(largestIncrement([1, 3, 7, 9, 19]));
 
@@ -89,8 +82,8 @@ function largestIncrement(numbers) {
  */
 function afterX(numbers, x) {
   let index = numbers.indexOf(x);
-  let afterxarray = numbers.slice(index+1, numbers.length);
-  return afterxarray;
+  let afterXArray = numbers.slice(index + 1, numbers.length);
+  return afterXArray;
 }
 //console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
 
@@ -124,9 +117,7 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  // Your code here
   return (string === string.toUpperCase())
-
 }
 
 //console.log(isUpperCase("JCREW"));
@@ -142,9 +133,8 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  // Your code here
   let found = numbers.filter(element=>element===x);
-  return found.length !== 0
+  return found.length !== 0;
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
