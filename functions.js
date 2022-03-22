@@ -35,14 +35,15 @@ function sumOdds(numbers) {
  * Another Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  let stringtoarray = string.toUpperCase();
+  //let stringtoarray = string.toUpperCase();
   //console.log(stringtoarray);
-  stringtoarray = string.split('');
-  let numofc = stringtoarray.filter(element=> element==="C");
-  console.log(numofc);
+  let stringtoarray = string.split('');
+  //console.log(stringtoarray);
+  let numofc = stringtoarray.filter(element=> element===c.toLowerCase() || element===c.toUpperCase() );
+  //console.log(numofc.length);
   return numofc.length;
 }
-characterCount("Character Count is clever", "c");
+//console.log(characterCount("Character Count is clever", "c"));
 
 /**
  * largestIncrement(numbers):
@@ -114,11 +115,11 @@ function abbreviate(firstName, lastName) {
  */
 function isUpperCase(string) {
   // Your code here
-
+  return (string === string.toUpperCase())
 
 }
 
-// console.log(isUpperCase("JCREW"));
+//console.log(isUpperCase("JCREW"));
 
 /**
  * elementInArray(numbers, x):
@@ -133,10 +134,7 @@ function isUpperCase(string) {
 function elementInArray(numbers, x) {
   // Your code here
   let found = numbers.filter(element=>element===x);
-  if (found.length !== 0){
-    return true;
-  }
-  return false;
+  return found.length !== 0
 }
 // console.log(elementInArray([5, 6, 7], 8));
 
